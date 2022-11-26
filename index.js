@@ -20,16 +20,6 @@ mongoose
 app.use("/", home);
 app.use("/participants", participants);
 
-//Save participants
-// participant
-//   .save()
-//   .then(() => {
-//     console.log("Data saved!");
-//   })
-//   .catch((err) => {
-//     console.log("Problem saving: ", err);
-//   });
-
 //Start express server
 const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
