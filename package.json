@@ -1,7 +1,7 @@
 {
-  "name": "test1",
+  "name": "participant_api",
   "version": "1.0.0",
-  "description": "This is the sample file.",
+  "description": "This is the api to serve participant app",
   "main": "index.js",
   "type": "module",
   "scripts": {
