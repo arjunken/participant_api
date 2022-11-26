@@ -1,5 +1,5 @@
 {
-  "name": "participant_api",
+  "name": "participantapi",
   "version": "1.0.0",
   "description": "This is the api to serve participant app",
   "main": "index.js",
