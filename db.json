@@ -1,0 +1,22 @@
+{
+  "participants": [
+    {
+      "name": "Arjun",
+      "id": 1,
+      "age": 45,
+      "phone": 298473842
+    },
+    {
+      "name": "Mallik",
+      "id": 2,
+      "age": 54,
+      "phone": 233455556
+    },
+    {
+      "name": "Ken",
+      "id": 3,
+      "age": 35,
+      "phone": 232421344
+    }
+  ]
+}
