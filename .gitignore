@@ -3,3 +3,4 @@ package-lock.json
 .git/
 .vercel
 .env.local
+.env
