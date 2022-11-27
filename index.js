@@ -3,13 +3,15 @@ import participants from "./routes/participants.js";
 import home from "./routes/home.js";
 import cors from "cors";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
 const app = express();
+dotenv.config();
 
 //Middlewares
 app.use(cors());
 app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 
 //Database Connection
 // .connect("mongodb://localhost/participants")
