@@ -21,11 +21,15 @@ mongoose
   )
   .then(() => {
     console.log("DB Connected..");
-    //Routes
-    app.use("/", home);
-    app.use("/participants", participants);
   })
-  .catch((err) => console.log("Error Connecting to the DB: ", err));
+  .catch((err) => {
+    console.log("Error Connecting to the DB: ", err);
+    return;
+  });
+
+//Routes
+app.use("/", home);
+app.use("/participants", participants);
 
 //Start express server
 const port = process.env.PORT || 4000;
