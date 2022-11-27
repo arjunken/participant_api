@@ -19,12 +19,13 @@ mongoose
   .connect(
     `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@experiments.d1gjsmt.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
   )
-  .then(() => console.log("DB Connected.."))
-  .catch((err) => console.log(err));
-
-//Routes
-app.use("/", home);
-app.use("/participants", participants);
+  .then(() => {
+    console.log("DB Connected..");
+    //Routes
+    app.use("/", home);
+    app.use("/participants", participants);
+  })
+  .catch((err) => console.log("Error Connecting to the DB: ", err));
 
 //Start express server
 const port = process.env.PORT || 4000;
