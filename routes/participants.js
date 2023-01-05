@@ -1,6 +1,7 @@
 import express from "express";
 import Participant from "../models/participant.js";
 import Joi from "joi";
+import auth from "../middleware/auth.js";
 
 // import fetch from "node-fetch";
 
@@ -8,7 +9,7 @@ const router = express.Router();
 
 //GET REQUESTS
 
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   // Data from Json server
   // const response = await fetch("http://localhost:3000/participants");
   // const data = await response.json();
@@ -27,7 +28,7 @@ const inputSchema = Joi.object({
   phone: Joi.number().min(1).required(),
 });
 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   const validationRes = inputSchema.validate(req.body);
 
   if (validationRes.error) {
@@ -54,7 +55,7 @@ router.post("/", async (req, res) => {
 
 //PUT REQUESTS
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
   const data = {
     name: req.body.name,
     age: req.body.age,
@@ -84,7 +85,7 @@ router.put("/:id", async (req, res) => {
 
 //DELETE REQUESTS
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
   const result = await Participant.deleteOne({ _id: req.params.id });
 
   //Return message

@@ -6,7 +6,7 @@ router.get("/", async (req, res) => {
   try {
     res.json({
       status: 200,
-      message: "API is running...Start consuming the endpoints!",
+      message: "Welcome to Participants API! Visit RapidAPI to use the API endpoints",
     });
   } catch (error) {
     console.error(error);
